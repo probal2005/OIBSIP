@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for clean typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-decor">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="calculator-wrapper">
+        <div class="calculator-header">
+            <h1 class="app-title">Calculator</h1>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+        </div>
+
+        <!-- Calculator Display Screen -->
+        <div class="calculator-display" aria-live="polite">
+            <div id="sub-display" class="sub-display"></div>
+            <div id="main-display" class="main-display">0</div>
+        </div>
+
+        <!-- Buttons Grid -->
+        <div class="calculator-keys">
+            <!-- Row 1 -->
+            <button type="button" class="btn btn-function" data-action="clear" aria-label="Clear">C</button>
+            <button type="button" class="btn btn-function" data-action="backspace" aria-label="Backspace">⌫</button>
+            <button type="button" class="btn btn-function" data-action="percent" aria-label="Percent">%</button>
+            <button type="button" class="btn btn-operator" data-action="operator" data-value="÷" aria-label="Divide">÷</button>
+
+            <!-- Row 2 -->
+            <button type="button" class="btn btn-number" data-value="7">7</button>
+            <button type="button" class="btn btn-number" data-value="8">8</button>
+            <button type="button" class="btn btn-number" data-value="9">9</button>
+            <button type="button" class="btn btn-operator" data-action="operator" data-value="×" aria-label="Multiply">×</button>
+
+            <!-- Row 3 -->
+            <button type="button" class="btn btn-number" data-value="4">4</button>
+            <button type="button" class="btn btn-number" data-value="5">5</button>
+            <button type="button" class="btn btn-number" data-value="6">6</button>
+            <button type="button" class="btn btn-operator" data-action="operator" data-value="−" aria-label="Subtract">−</button>
+
+            <!-- Row 4 -->
+            <button type="button" class="btn btn-number" data-value="1">1</button>
+            <button type="button" class="btn btn-number" data-value="2">2</button>
+            <button type="button" class="btn btn-number" data-value="3">3</button>
+            <button type="button" class="btn btn-operator" data-action="operator" data-value="+" aria-label="Add">+</button>
+
+            <!-- Row 5 -->
+            <button type="button" class="btn btn-function" data-action="toggle-sign" aria-label="Toggle Sign">±</button>
+            <button type="button" class="btn btn-number" data-value="0">0</button>
+            <button type="button" class="btn btn-number" data-value="." aria-label="Decimal Point">.</button>
+            <button type="button" class="btn btn-equals" data-action="calculate" aria-label="Equals">=</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            © <span id="year"></span>
+            Made with
+            <span class="heart">❤️</span>
+            by
+            <a href="https://github.com/Probal2005"
+               target="_blank"
+               rel="noopener noreferrer">
+                Probal Dhali
+            </a>
+            | All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
