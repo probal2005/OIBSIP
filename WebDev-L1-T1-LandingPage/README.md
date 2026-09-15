@@ -50,9 +50,7 @@ It demonstrates practical skills in website structure, styling, navigation, and 
 
 ### 01 - Demo Video
 
-<video width="100%" controls>
-    <source src="../assets/videos/landing-page.mp4" type="video/mp4">
-</video>
+<video src="assets/videos/landing-page.mp4" width="100%" controls></video>
 
 ### 01 — Landing Page
 
