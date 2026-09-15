@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuthGuard · Modern Authentication System</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="app-header">
+    <div class="nav-container">
+      <a href="#login" class="brand-logo">
+        <i class="fa-solid fa-shield-halved brand-icon"></i>
+        <span>AuthGuard</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#login" id="navLoginBtn" class="nav-btn active"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="#register" id="navRegisterBtn" class="nav-btn"><i class="fa-solid fa-user-plus"></i> Register</a>
+        <span id="navUserBadge" class="nav-user-badge hidden">
+          <i class="fa-solid fa-user-circle"></i> <span id="navUsername">User</span>
+        </span>
+        <button id="navLogoutBtn" class="btn btn-logout-sm hidden">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main App Container -->
+  <main class="main-content">
+
+    <!-- Global Alert / Toast Notification Container -->
+    <div id="alertBox" class="alert-box hidden" role="alert">
+      <i id="alertIcon" class="fa-solid fa-circle-info alert-icon"></i>
+      <span id="alertMessage" class="alert-message"></span>
+      <button id="alertCloseBtn" class="alert-close-btn" aria-label="Close alert">&times;</button>
+    </div>
+
+    <!-- ==================== VIEW 1: LOGIN ==================== -->
+    <section id="loginView" class="auth-card-wrapper view-section">
+      <div class="auth-card">
+        <div class="card-header">
+          <div class="icon-avatar">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <h2>Welcome Back</h2>
+          <p class="subtitle">Enter your credentials to access your account</p>
+        </div>
+
+        <form id="loginForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label for="loginIdentifier">Username or Email</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope-user input-icon"></i>
+              <input type="text" id="loginIdentifier" name="identifier" placeholder="e.g. john_doe or john@example.com"
+                autocomplete="username" required>
+            </div>
+            <span class="field-error" id="loginIdentifierError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-key input-icon"></i>
+              <input type="password" id="loginPassword" name="password" placeholder="••••••••"
+                autocomplete="current-password" required>
+              <button type="button" class="password-toggle" data-target="loginPassword"
+                aria-label="Toggle Password Visibility">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+            <span class="field-error" id="loginPasswordError"></span>
+          </div>
+
+          <button type="submit" id="loginSubmitBtn" class="btn btn-primary btn-block">
+            <span><i class="fa-solid fa-right-to-bracket"></i> Login</span>
+            <div class="spinner hidden"></div>
+          </button>
+        </form>
+
+        <div class="card-footer">
+          <p>Don't have an account? <a href="#register" class="link-highlight">Register here</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 2: REGISTER ==================== -->
+    <section id="registerView" class="auth-card-wrapper view-section hidden">
+      <div class="auth-card">
+        <div class="card-header">
+          <div class="icon-avatar">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+          <h2>Create Account</h2>
+          <p class="subtitle">Sign up to get started with AuthGuard</p>
+        </div>
+
+        <form id="registerForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label for="regUsername">Username</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-user input-icon"></i>
+              <input type="text" id="regUsername" name="username" placeholder="Choose a unique username"
+                autocomplete="username" required>
+            </div>
+            <span class="field-error" id="regUsernameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="regEmail">Email Address</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-envelope input-icon"></i>
+              <input type="email" id="regEmail" name="email" placeholder="name@example.com" autocomplete="email"
+                required>
+            </div>
+            <span class="field-error" id="regEmailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword">Password</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock input-icon"></i>
+              <input type="password" id="regPassword" name="password" placeholder="At least 8 chars & 1 number"
+                autocomplete="new-password" required>
+              <button type="button" class="password-toggle" data-target="regPassword"
+                aria-label="Toggle Password Visibility">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+            <span class="field-error" id="regPasswordError"></span>
+
+            <!-- Live Password Requirements Checklist -->
+            <div class="password-requirements" id="passwordReqBox">
+              <span class="req-title">Password must contain:</span>
+              <div class="req-badges">
+                <span class="badge" id="reqMinChar">
+                  <i class="fa-solid fa-circle-xmark"></i> Minimum 8 characters
+                </span>
+                <span class="badge" id="reqNumber">
+                  <i class="fa-solid fa-circle-xmark"></i> At least 1 number
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regConfirmPassword">Confirm Password</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-shield-check input-icon"></i>
+              <input type="password" id="regConfirmPassword" name="confirmPassword" placeholder="Re-enter your password"
+                autocomplete="new-password" required>
+            </div>
+            <span class="field-error" id="regConfirmPasswordError"></span>
+          </div>
+
+          <button type="submit" id="registerSubmitBtn" class="btn btn-primary btn-block">
+            <span><i class="fa-solid fa-user-check"></i> Register Account</span>
+            <div class="spinner hidden"></div>
+          </button>
+        </form>
+
+        <div class="card-footer">
+          <p>Already have an account? <a href="#login" class="link-highlight">Login here</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: PROTECTED DASHBOARD ==================== -->
+    <section id="dashboardView" class="dashboard-wrapper view-section hidden">
+      <div class="dashboard-card">
+        <div class="dashboard-header">
+          <div class="user-greeting">
+            <div class="avatar-circle">
+              <span id="dashAvatarLetter">U</span>
+            </div>
+            <div>
+              <span class="status-pill"><i class="fa-solid fa-circle-check"></i> Authenticated Session</span>
+              <h2>Welcome, <span id="dashUsernameDisplay">User</span>!</h2>
+              <p class="subtitle">Access granted to the protected dashboard area.</p>
+            </div>
+          </div>
+          <button id="dashboardLogoutBtn" class="btn btn-danger">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </button>
+        </div>
+
+        <div class="dashboard-body">
+          <div class="grid-3">
+            <div class="stat-card">
+              <div class="stat-icon icon-blue"><i class="fa-solid fa-user-shield"></i></div>
+              <div class="stat-info">
+                <span class="stat-label">Username</span>
+                <span class="stat-value" id="dashUserVal">-</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon icon-purple"><i class="fa-solid fa-at"></i></div>
+              <div class="stat-info">
+                <span class="stat-label">Email Address</span>
+                <span class="stat-value" id="dashEmailVal">-</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon icon-green"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="stat-info">
+                <span class="stat-label">Member Since</span>
+                <span class="stat-value" id="dashCreatedVal">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="security-banner">
+            <div class="banner-icon">
+              <i class="fa-solid fa-vault"></i>
+            </div>
+            <div class="banner-text">
+              <h3>Secure Encrypted Storage</h3>
+              <p>Your password is securely hashed on the server using industry-standard <code>bcrypt</code> salting
+                algorithms. Your session cookie is HTTP-only protected.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>
+      <a href="https://github.com/probal2005" target="_blank" rel="noopener noreferrer">
+        AuthGuard System
+      </a>
+      &copy; 2026
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

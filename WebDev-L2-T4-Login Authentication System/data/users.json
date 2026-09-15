@@ -1,0 +1,18 @@
+[
+  {
+    "id": "usr_1789490248377_ykoe2",
+    "username": "probaldhali2006@gmail.com",
+    "email": "probaldhali2006@gmail.com",
+    "passwordHash": "$2a$10$PMKj9K1Y0hHn/Xww4ickIewSt39WF5vB7nbAGaR/Ua1Ra5WKclILO",
+    "createdAt": "2026-09-15T16:37:28.377Z",
+    "lastLoginAt": "2026-09-15T16:44:45.906Z"
+  },
+  {
+    "id": "usr_1789491042597_h7tqv",
+    "username": "probal",
+    "email": "probaldhali2005@gmail.com",
+    "passwordHash": "$2a$10$oU1zYl6i3h0tux0zqgGBHufpK5eGUEsU0BWK0FXseJ.r2iCGn8mnK",
+    "createdAt": "2026-09-15T16:50:42.598Z",
+    "lastLoginAt": "2026-09-15T16:51:00.117Z"
+  }
+]
