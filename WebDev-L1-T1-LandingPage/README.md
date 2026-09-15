@@ -26,7 +26,7 @@
 
 ## 📌 About the Project
 
-**Luma Studio** is a modern landing page developed as part of my web development and designing journey.
+**Luma Studio** is a modern landing page developed as part of my web development and design journey.
 
 This project focuses on creating a visually appealing, responsive, and user-friendly website using core frontend technologies.
 
@@ -111,13 +111,13 @@ Luma-Studio/
 **1. Clone the repository**
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/probal2005/OIBSIP/tree/main/WebDev-L1-T1-LandingPage
 ```
 
 **2. Navigate to the project folder**
 
 ```bash
-cd Luma-Studio
+cd WebDev-L1-T1-LandingPage
 ```
 
 **3. Run the project**
