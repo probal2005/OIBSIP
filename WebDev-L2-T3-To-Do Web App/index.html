@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow — Interactive To-Do Web App</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="header-branding">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1>TaskFlow</h1>
+                    <p class="subtitle" id="current-date-display">Organize your day efficiently</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle-btn" class="icon-btn" title="Toggle Theme" aria-label="Toggle light/dark theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Task Creator Input Section -->
+        <section class="task-creator-card">
+            <form id="task-form" class="task-form" autocomplete="off">
+                <div class="input-wrapper">
+                    <input type="text" id="task-input" placeholder="What task do you need to complete today?" aria-label="New task input" required>
+                    <span class="input-focus-border"></span>
+                </div>
+                <div class="form-controls">
+                    <select id="task-priority" class="priority-select" title="Set Priority" aria-label="Task Priority">
+                        <option value="medium" selected>⚡ Medium Priority</option>
+                        <option value="high">🔥 High Priority</option>
+                        <option value="low">🌱 Low Priority</option>
+                    </select>
+                    <button type="submit" id="add-task-btn" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>Add Task</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Toolbar / Search and Filters -->
+        <section class="toolbar-section">
+            <div class="search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="search-input" placeholder="Search tasks..." aria-label="Search tasks">
+                <button type="button" id="clear-search-btn" class="clear-search-btn" title="Clear search" hidden>&times;</button>
+            </div>
+            <div class="filter-group" role="tablist" aria-label="Filter tasks">
+                <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Tasks</button>
+                <button type="button" class="filter-btn" data-filter="pending" role="tab" aria-selected="false">Pending</button>
+                <button type="button" class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+            </div>
+        </section>
+
+        <!-- Task Lists Dashboard (Columns) -->
+        <main class="lists-dashboard">
+            <!-- Pending Tasks Column -->
+            <section class="task-column pending-column" id="pending-section">
+                <div class="column-header">
+                    <div class="column-title">
+                        <h2>Pending Tasks</h2>
+                        <span id="pending-count-badge" class="badge badge-pending">0 pending</span>
+                    </div>
+                </div>
+
+                <!-- Empty State for Pending -->
+                <div id="pending-empty" class="empty-state">
+                    <div class="empty-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>No Pending Tasks</h3>
+                    <p>You're all caught up! Add a new task above to get started.</p>
+                </div>
+
+                <!-- Pending Task List -->
+                <ul id="pending-list" class="task-list" aria-label="Pending Tasks List"></ul>
+            </section>
+
+            <!-- Completed Tasks Column -->
+            <section class="task-column completed-column" id="completed-section">
+                <div class="column-header">
+                    <div class="column-title">
+                        <h2>Completed Tasks</h2>
+                        <span id="completed-count-badge" class="badge badge-completed">0 completed</span>
+                    </div>
+                    <button id="clear-completed-btn" class="btn btn-secondary btn-sm" title="Clear all completed tasks">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                        <span>Clear All</span>
+                    </button>
+                </div>
+
+                <!-- Empty State for Completed -->
+                <div id="completed-empty" class="empty-state">
+                    <div class="empty-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>No Completed Tasks Yet</h3>
+                    <p>Check off tasks as you accomplish them to see them here.</p>
+                </div>
+
+                <!-- Completed Task List -->
+                <ul id="completed-list" class="task-list" aria-label="Completed Tasks List"></ul>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            © <span id="year"></span>
+            Made with
+            <span class="heart">❤️</span>
+            by
+            <a href="https://github.com/Probal2005" target="_blank" rel="noopener noreferrer">
+                Probal Dhali
+            </a>
+            | All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
+
