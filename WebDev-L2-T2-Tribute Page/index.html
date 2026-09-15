@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="A Tribute Page dedicated to Alan Turing — Father of Modern Computer Science, Enigma Codebreaker, and Artificial Intelligence Pioneer.">
+  <title>Alan Turing — Father of Computer Science & AI Pioneer</title>
+
+  <!-- Google Fonts: Dual Typography (Serif for headings, Sans-serif for body, Mono for accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-code">&lt;AT&gt;</span> ALAN TURING
+      </a>
+      <nav class="nav-links">
+        <a href="#biography">Biography</a>
+        <a href="#quote-section">Quotes</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#legacy">Legacy</a>
+      </nav>
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle light and dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Section 1: Hero Section (Background Theme 1: Dark Midnight Navy) -->
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-badge">1912 – 1954 • MATHEMATICIAN • CRYPTANALYST • AI VISIONARY</div>
+      <h1 class="hero-title">ALAN TURING</h1>
+      <p class="hero-tagline">"Father of Modern Computer Science, Legendary Enigma Codebreaker, & Pioneer of Artificial
+        Intelligence"</p>
+
+      <!-- Prominent Subject Image (Royalty-free from Wikimedia Commons) -->
+      <figure class="hero-image-card">
+        <div class="image-wrapper">
+          <img src="assets/images/alan-turing.jpg" alt="Historic portrait of Alan Turing aged 16 by Elliott & Fry"
+            loading="eager" id="turing-portrait">
+          <div class="image-glow"></div>
+        </div>
+        <figcaption class="image-caption">
+          <strong>Alan Turing (1912–1954)</strong> — Historic portrait.
+          <span class="caption-source">Source: <a href="https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg"
+              target="_blank" rel="noopener noreferrer">Wikimedia Commons (Public Domain)</a></span>
+        </figcaption>
+      </figure>
+
+      <!-- Key Quick Stats -->
+      <div class="quick-stats">
+        <div class="stat-card">
+          <span class="stat-value">1936</span>
+          <span class="stat-label">Universal Turing Machine</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">14M+</span>
+          <span class="stat-label">Lives Saved at Bletchley</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">1950</span>
+          <span class="stat-label">Formulated Turing Test</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">£50</span>
+          <span class="stat-label">Bank of England Banknote</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Biography & Tribute (Background Theme 2: Pristine Light Slate / Off-White) -->
+  <section id="biography" class="biography-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">LIFE & INTELLECTUAL LEGACY</span>
+        <h2 class="section-title">The Genius Who Invented the Future</h2>
+        <div class="title-divider"></div>
+      </div>
+
+      <article class="bio-content">
+        <div class="bio-paragraph-card">
+          <div class="paragraph-number">01</div>
+          <div class="paragraph-text">
+            <h3>Early Genius & The Universal Machine</h3>
+            <p>
+              Alan Mathison Turing was born on June 23, 1912, in Maida Vale, London. From early childhood, Turing
+              demonstrated an astonishing natural curiosity and mathematical intuition. While studying at King's
+              College, Cambridge, he was elected a Fellow at just 22 years of age for his remarkable dissertation on
+              probability theory. In 1936, Turing published his monumental paper <em>"On Computable Numbers, with an
+                Application to the Entscheidungsproblem"</em>. In this work, he conceptualized a hypothetical computing
+              device—now known as the <strong>Universal Turing Machine</strong>—capable of performing any calculation
+              that could be formally described by an algorithm. This single theoretical paper laid the absolute
+              foundation for modern computer science, stored-program digital memory, and software architecture decades
+              before the physical technology existed.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-paragraph-card">
+          <div class="paragraph-number">02</div>
+          <div class="paragraph-text">
+            <h3>Bletchley Park & Cracking the Enigma</h3>
+            <p>
+              When World War II erupted in 1939, Turing joined the Government Code and Cypher School at Bletchley Park,
+              becoming head of Hut 8—the secret station tasked with deciphering German Naval Enigma communications.
+              Recognizing that human decipherment alone was far too slow against millions of daily military
+              permutations, Turing engineered the <strong>Bombe</strong>: an electromechanical machine that
+              systematically eliminated impossible Enigma settings. His brilliant cryptanalytic innovations, including
+              the <em>Banburismus</em> statistical methodology, regularly decoded Nazi U-boat signals, securing crucial
+              maritime supply routes during the Battle of the Atlantic. Historians estimate that Turing's work shortened
+              the war in Europe by more than two years and saved over 14 million Allied and civilian lives.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-paragraph-card">
+          <div class="paragraph-number">03</div>
+          <div class="paragraph-text">
+            <h3>Foundations of Artificial Intelligence & The Turing Test</h3>
+            <p>
+              Following WWII, Turing directed his formidable intellect toward machine cognition and biological growth.
+              At the National Physical Laboratory (NPL), he designed the Automatic Computing Engine (ACE)—one of the
+              world's earliest complete specifications for a electronic stored-program computer. Moving to the
+              University of Manchester in 1948, Turing created early computer software and authored his seminal 1950
+              paper <em>"Computing Machinery and Intelligence"</em>. Opening with the famous question, <em>"Can machines
+                think?"</em>, Turing formulated the "Imitation Game"—now universally called the <strong>Turing
+                Test</strong>. His insight that intelligence could be evaluated through behavioral conversational
+              performance remains a core pillar in modern Machine Learning, Natural Language Processing, and Artificial
+              General Intelligence research.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-paragraph-card">
+          <div class="paragraph-number">04</div>
+          <div class="paragraph-text">
+            <h3>Tragic Persecution, Posthumous Pardon & Global Honor</h3>
+            <p>
+              Despite his heroic contributions to human freedom and modern technology, Alan Turing faced terrible
+              injustice. In 1952, he was prosecuted under archaic British laws for his homosexuality, forced to choose
+              between imprisonment or chemical castration. Choosing the latter severely damaged his health and spirit.
+              On June 7, 1954, Alan Turing tragically died of cyanide poisoning at age 41. Decades later, an
+              international campaign led to an official government apology from Prime Minister Gordon Brown in 2009,
+              followed by a Royal Prerogative of Mercy granted by Queen Elizabeth II in 2013. Today, the ACM's
+              <strong>A.M. Turing Award</strong> is celebrated as computing's "Nobel Prize", and his likeness graces the
+              Bank of England's £50 note—a lasting tribute to a visionary whose mind transformed human civilization.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 3: Quote Block Section (Background Theme 3: Deep Indigo / Midnight Accent) -->
+  <section id="quote-section" class="quote-section">
+    <div class="quote-container">
+      <div class="quote-mark quote-mark-left">“</div>
+
+      <div class="quote-carousel">
+        <blockquote class="active-quote" id="quote-display">
+          <p class="quote-text">
+            "Sometimes it is the people no one imagines anything of who do the things that no one can imagine."
+          </p>
+          <cite class="quote-author">— Alan Turing (1954)</cite>
+        </blockquote>
+      </div>
+
+      <div class="quote-controls">
+        <button id="prev-quote" class="quote-btn" aria-label="Previous quote">❮</button>
+        <div class="quote-dots" id="quote-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+        </div>
+        <button id="next-quote" class="quote-btn" aria-label="Next quote">❯</button>
+      </div>
+
+      <div class="quote-mark quote-mark-right">”</div>
+    </div>
+  </section>
+
+  <!-- Section 4: Timeline & Key Achievements (Background Theme 4: Soft Pearl Slate) -->
+  <section id="timeline" class="timeline-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">CHRONOLOGY OF EXCELLENCE</span>
+        <h2 class="section-title">Timeline & Key Achievements</h2>
+        <div class="title-divider"></div>
+      </div>
+
+      <div class="timeline-wrapper">
+        <ol class="timeline-list">
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">👶</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">JUNE 23, 1912</div>
+              <h3 class="timeline-heading">Birth in London</h3>
+              <p class="timeline-desc">
+                Born in Maida Vale, London to Julius Mathison Turing and Ethel Sara Stoney. Shows early fascination with
+                mathematics and scientific experiments.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">🎓</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1931 – 1934</div>
+              <h3 class="timeline-heading">Cambridge Fellowship</h3>
+              <p class="timeline-desc">
+                Studies Mathematics at King's College, Cambridge. Graduating with first-class honors, he is elected a
+                Fellow at age 22 for his work on the Central Limit Theorem.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item highlight-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">💡</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1936</div>
+              <h3 class="timeline-heading">Universal Turing Machine</h3>
+              <p class="timeline-desc">
+                Publishes <em>"On Computable Numbers"</em>, introducing the theoretical foundation of modern computers,
+                programmable memory, and algorithmic logic.
+              </p>
+              <span class="badge">Milestone Achievement</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">🏛️</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1938</div>
+              <h3 class="timeline-heading">PhD at Princeton University</h3>
+              <p class="timeline-desc">
+                Earns his doctorate from Princeton under Alonzo Church, introducing ordinal logic and the concept of
+                hypercomputation.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item highlight-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">🔐</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1939 – 1945</div>
+              <h3 class="timeline-heading">Cracking the Enigma Code</h3>
+              <p class="timeline-desc">
+                Leads Hut 8 at Bletchley Park. Designs the <strong>Bombe</strong> deciphering engine, saving over 14
+                million lives by breaking German Enigma ciphers.
+              </p>
+              <span class="badge">World War II Victory</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">🖥️</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1946</div>
+              <h3 class="timeline-heading">ACE Computer Design & OBE</h3>
+              <p class="timeline-desc">
+                Awarded the Order of the British Empire (OBE). Presents the blueprint for the Automatic Computing Engine
+                (ACE), a pioneer stored-program computer.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item highlight-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">🤖</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1950</div>
+              <h3 class="timeline-heading">The Turing Test & AI</h3>
+              <p class="timeline-desc">
+                Publishes <em>"Computing Machinery and Intelligence"</em>, formulating the <strong>Turing Test</strong>
+                to assess machine consciousness and conversational AI.
+              </p>
+              <span class="badge">Foundational AI Paper</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">🧬</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1952</div>
+              <h3 class="timeline-heading">Mathematical Morphogenesis</h3>
+              <p class="timeline-desc">
+                Publishes <em>"The Chemical Basis of Morphogenesis"</em>, predicting reaction-diffusion equations that
+                govern biological pattern formation (e.g., animal stripes).
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">🏆</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">1966 – PRESENT</div>
+              <h3 class="timeline-heading">ACM Turing Award Established</h3>
+              <p class="timeline-desc">
+                The Association for Computing Machinery institutes the annual Turing Award, globally recognized as the
+                highest honor ("Nobel Prize") in computer science.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-icon">💷</span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-date">2013 & 2021</div>
+              <h3 class="timeline-heading">Royal Pardon & £50 Note</h3>
+              <p class="timeline-desc">
+                Granted a Royal Prerogative of Mercy in 2013. In 2021, the Bank of England officially releases the £50
+                polymer banknote featuring Turing's portrait and ticker-tape code.
+              </p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Pillars of Legacy Grid -->
+  <section id="legacy" class="legacy-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-subtitle">IMPACT ON MODERN SCIENCE</span>
+        <h2 class="section-title">Pillars of Turing's Legacy</h2>
+        <div class="title-divider"></div>
+      </div>
+
+      <div class="legacy-grid">
+        <div class="legacy-card">
+          <div class="card-icon">💻</div>
+          <h3>Modern Digital Computing</h3>
+          <p>
+            Every smartphone, supercomputer, and cloud server today operates on the principles of the Universal Turing
+            Machine—separating hardware from software data.
+          </p>
+        </div>
+
+        <div class="legacy-card">
+          <div class="card-icon">🧠</div>
+          <h3>Artificial Intelligence</h3>
+          <p>
+            Turing's vision of machine learning and conversational evaluation laid the groundwork for today's Large
+            Language Models, neural networks, and robotics.
+          </p>
+        </div>
+
+        <div class="legacy-card">
+          <div class="card-icon">🛡️</div>
+          <h3>Cryptology & Security</h3>
+          <p>
+            By designing mechanical cryptanalysis engines at Bletchley Park, Turing pioneered the techniques of modern
+            cybersecurity, data encryption, and intelligence.
+          </p>
+        </div>
+
+        <div class="legacy-card">
+          <div class="card-icon">🌿</div>
+          <h3>Theoretical Biology</h3>
+          <p>
+            His reaction-diffusion equations explained how natural patterns emerge in living organisms, creating a new
+            mathematical domain in biophysics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>ALAN TURING TRIBUTE</h3>
+        <p>A tribute page celebrating the life, genius, and enduring legacy of Alan Mathison Turing (1912–1954).</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore Archives</h4>
+        <ul>
+          <li><a href="https://bletchleypark.org.uk/" target="_blank" rel="noopener noreferrer">Bletchley Park
+              Museum</a></li>
+          <li><a href="https://amturing.acm.org/" target="_blank" rel="noopener noreferrer">ACM Turing Award</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/Category:Alan_Turing" target="_blank"
+              rel="noopener noreferrer">Wikimedia Archives</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 <a href="https://github.com/Probal2006" target="_blank" rel="noopener noreferrer"
+            class="hidden-github-link">Tribute Page</a> • Designed with HTML5 & CSS3 • <a
+            href="https://github.com/Probal2006" target="_blank" rel="noopener noreferrer"
+            class="hidden-github-link">Probal Dhali</a> Content</p>
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top of page">
+          ↑ Back to Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
