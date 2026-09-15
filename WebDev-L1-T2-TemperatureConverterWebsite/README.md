@@ -5,6 +5,8 @@ A modern and responsive **Temperature Converter** built using HTML, CSS, and Jav
 The application converts temperatures between **Celsius, Fahrenheit, and Kelvin** in real time with validation, quick presets, thermal status detection, and copy-to-clipboard functionality.
 
 ---
+<img src="assets/images/preview.png" width="100%" controls></img>
+---
 
 ## 👨‍💻 Internship Details
 
@@ -166,7 +168,7 @@ The application contains:
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/probal2005/OIBSIP/tree/main/WebDev-L1-T2-TemperatureConverterWebsite
 ```
 
 ### 2. Open the Project
