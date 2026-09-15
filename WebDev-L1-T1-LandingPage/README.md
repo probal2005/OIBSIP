@@ -50,7 +50,9 @@ It demonstrates practical skills in website structure, styling, navigation, and 
 
 ### 01 - Demo Video
 
-<video src="assets/videos/landing-page.mp4" alt="Luma Studio Landing Page Demo Video" width="100%" controls></video>
+<video width="100%" controls>
+    <source src="../assets/videos/landing-page.mp4" type="video/mp4">
+</video>
 
 ### 01 — Landing Page
 
