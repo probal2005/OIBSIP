@@ -87,15 +87,9 @@ Luma-Studio/
 │       ├── preview-2.png
 │       └── preview-3.png
 │
-├── css/
-│
 ├── favicon.svg
 │
 ├── index.html
-│
-├── js/
-│   ├── components/
-│   └── sources/
 │
 ├── styles.css
 │
